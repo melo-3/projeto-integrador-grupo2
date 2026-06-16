@@ -1,0 +1,68 @@
+OBJETIVO
+--------------------------------------------------------------
+PASSO 1 — Acessar o modo privilegiado e configuração global
+--------------------------------------------------------------
+ 
+Router> enable
+Router# configure terminal
+ 
+--------------------------------------------------------------
+PASSO 2 — Definir o hostname do roteador
+--------------------------------------------------------------
+ 
+Router(config)# hostname Router00
+ 
+--------------------------------------------------------------
+PASSO 3 — Configurar a interface voltada para a LAN Clientes
+          (FastEthernet0/0 → conectada ao Switch00)
+--------------------------------------------------------------
+ 
+Router00(config)# interface FastEthernet0/0
+Router00(config-if)# ip address 192.168.10.1 255.255.255.0
+Router00(config-if)# no shutdown
+Router00(config-if)# exit
+ 
+  Obs.: o comando "no shutdown" é obrigatório — interfaces de
+  roteadores no Packet Tracer iniciam administrativamente
+  desligadas (estado "shutdown" por padrão).
+ 
+--------------------------------------------------------------
+PASSO 4 — Configurar a interface voltada para a Rede Servidor
+          (FastEthernet0/1 → conectada diretamente ao Server00)
+--------------------------------------------------------------
+ 
+Router00(config)# interface FastEthernet0/1
+Router00(config-if)# ip address 192.168.1.1 255.255.255.0
+Router00(config-if)# no shutdown
+Router00(config-if)# exit
+ 
+--------------------------------------------------------------
+PASSO 5 — Salvar a configuração na memória não-volátil (NVRAM)
+--------------------------------------------------------------
+ 
+Router00(config)# end
+Router00# write
+ 
+  Equivalente a: copy running-config startup-config
+ 
+--------------------------------------------------------------
+PASSO 6 — Verificar as interfaces (opcional, mas recomendado)
+--------------------------------------------------------------
+ 
+Router00# show ip interface brief
+ 
+  Resultado esperado:
+  Interface         IP-Address      OK? Method Status   Protocol
+  FastEthernet0/0   192.168.10.1    YES manual up       up
+  FastEthernet0/1   192.168.1.1     YES manual up       up
+ 
+--------------------------------------------------------------
+OBSERVAÇÕES SOBRE ROTEAMENTO
+--------------------------------------------------------------
+ 
+Não foi necessário configurar rotas estáticas adicionais,
+pois as duas redes (192.168.10.0/24 e 192.168.1.0/24) estão
+diretamente conectadas às interfaces do Router00. O IOS gera
+automaticamente as rotas "connected" na tabela de roteamento.
+ 
+Para verificar: Router00# show ip route
