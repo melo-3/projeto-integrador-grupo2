@@ -17,10 +17,10 @@ PASSO 3 — Configurar a interface voltada para a LAN Clientes
           (FastEthernet0/0 → conectada ao Switch00)
 --------------------------------------------------------------
  
-Router00(config)# interface FastEthernet0/0
-Router00(config-if)# ip address 192.168.1.10 255.255.255.0
-Router00(config-if)# no shutdown
-Router00(config-if)# exit
+Router2(config)# interface FastEthernet0/0
+Router2(config-if)# ip address 192.168.1.10 255.255.255.0
+Router2(config-if)# no shutdown
+Router2(config-if)# exit
  
   Obs.: o comando "no shutdown" é obrigatório — interfaces de
   roteadores no Packet Tracer iniciam administrativamente
@@ -31,17 +31,17 @@ PASSO 4 — Configurar a interface voltada para a Rede Servidor
           (FastEthernet0/1 → conectada diretamente ao Server00)
 --------------------------------------------------------------
  
-Router00(config)# interface FastEthernet0/1
-Router00(config-if)# ip address 192.168.1.11 255.255.255.0
-Router00(config-if)# no shutdown
-Router00(config-if)# exit
+Router2(config)# interface FastEthernet0/1
+Router2(config-if)# ip address 192.168.1.11 255.255.255.0
+Router2(config-if)# no shutdown
+Router2(config-if)# exit
  
 --------------------------------------------------------------
 PASSO 5 — Salvar a configuração na memória não-volátil (NVRAM)
 --------------------------------------------------------------
  
-Router00(config)# end
-Router00# write
+Router2(config)# end
+Router2# write
  
   Equivalente a: copy running-config startup-config
  
@@ -49,7 +49,7 @@ Router00# write
 PASSO 6 — Verificar as interfaces (opcional, mas recomendado)
 --------------------------------------------------------------
  
-Router00# show ip interface brief
+Router2# show ip interface brief
  
   Resultado esperado:
   Interface         IP-Address      OK? Method Status   Protocol
