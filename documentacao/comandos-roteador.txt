@@ -10,7 +10,7 @@ Router# configure terminal
 PASSO 2 — Definir o hostname do roteador
 --------------------------------------------------------------
  
-Router(config)# hostname Router00
+Router(config)# hostname Router2
  
 --------------------------------------------------------------
 PASSO 3 — Configurar a interface voltada para a LAN Clientes
@@ -18,7 +18,7 @@ PASSO 3 — Configurar a interface voltada para a LAN Clientes
 --------------------------------------------------------------
  
 Router00(config)# interface FastEthernet0/0
-Router00(config-if)# ip address 192.168.10.1 255.255.255.0
+Router00(config-if)# ip address 192.168.1.10 255.255.255.0
 Router00(config-if)# no shutdown
 Router00(config-if)# exit
  
@@ -32,7 +32,7 @@ PASSO 4 — Configurar a interface voltada para a Rede Servidor
 --------------------------------------------------------------
  
 Router00(config)# interface FastEthernet0/1
-Router00(config-if)# ip address 192.168.1.1 255.255.255.0
+Router00(config-if)# ip address 192.168.1.11 255.255.255.0
 Router00(config-if)# no shutdown
 Router00(config-if)# exit
  
@@ -53,8 +53,8 @@ Router00# show ip interface brief
  
   Resultado esperado:
   Interface         IP-Address      OK? Method Status   Protocol
-  FastEthernet0/0   192.168.10.1    YES manual up       up
-  FastEthernet0/1   192.168.1.1     YES manual up       up
+  FastEthernet0/0   192.168.1.10     YES manual up       up
+  FastEthernet0/1   192.168.1.11     YES manual up       up
  
 --------------------------------------------------------------
 OBSERVAÇÕES SOBRE ROTEAMENTO
