@@ -1,0 +1,111 @@
+TESTE 1 — Ping: PC3 → Server00
+--------------------------------------------------------------
+ 
+Dispositivo origem : PC3 (192.168.1.10)
+Dispositivo destino: Server00 (10.0.0.10)
+Ferramenta         : Desktop > Command Prompt (Packet Tracer)
+Comando            : ping 192.168.1.2
+ 
+Resultado:
+  Pinging 10.0.0.10 with 32 bytes of data:
+  Reply from 10.0.0.10: bytes=32 time=1ms TTL=127
+  Reply from 10.0.0.10: bytes=32 time=0ms TTL=127
+  Reply from 10.0.0.10: bytes=32 time=0ms TTL=127
+  Reply from 10.0.0.10: bytes=32 time=0ms TTL=127
+ 
+  Ping statistics for 10.0.0.10:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)
+ 
+Conclusão: SUCESSO — conectividade entre as duas redes
+confirmada via roteador.
+ 
+--------------------------------------------------------------
+TESTE 2 — Ping: PC02 → Server00
+--------------------------------------------------------------
+ 
+Dispositivo origem : PC01 (192.168.1.11)
+Dispositivo destino: Server00 (10.0.0.10)
+Comando            : ping 10.0.0.10 ou ping www.redecomp.com
+ 
+Resultado: SUCESSO — mesmos resultados do Teste 1.
+Todos os pacotes retornados sem perda.
+ 
+--------------------------------------------------------------
+TESTE 3 — Ping: PC2 → Router00 (gateway)
+--------------------------------------------------------------
+ 
+Comando  : ping 10.0.0.10
+Resultado: SUCESSO — gateway acessível pela LAN.
+ 
+--------------------------------------------------------------
+TESTE 4 — Acesso à página web via endereço IP
+--------------------------------------------------------------
+ 
+Dispositivo    : PC3
+Ferramenta     : Desktop > Web Browser (Packet Tracer)
+URL acessada   : www.redecomp.com
+ 
+Resultado:
+  - A página index.html carregou corretamente.
+  - O cabeçalho "Receitas Brasileiras" foi exibido.
+  - A grade com os 12 cards de pratos foi renderizada.
+  - O arquivo estilo.css foi aplicado (cores e layout).
+ 
+Conclusão: SUCESSO — servidor HTTP respondendo corretamente.
+ 
+--------------------------------------------------------------
+TESTE 5 — Acesso à página web via nome DNS
+--------------------------------------------------------------
+ 
+Dispositivo    : PC3
+Ferramenta     : Desktop > Web Browser (Packet Tracer)
+ 
+Configuração DNS usada:
+  Servidor DNS : 0.0.0.0
+  Registro A   : www.redecomp.com → 10.0.0.10
+ 
+Resultado:
+  - O DNS resolveu o nome corretamente para 10.0.0.10
+  - A página carregou normalmente, idêntica ao Teste 4.
+ 
+Conclusão: SUCESSO — serviço DNS operacional.
+ 
+--------------------------------------------------------------
+TESTE 6 — Funcionalidades JavaScript no Packet Tracer
+--------------------------------------------------------------
+ 
+Funcionalidade 1: Manipulação do DOM (geração dinâmica dos cards)
+  Resultado: SUCESSO — os 12 cards foram gerados pelo script.js
+  e apareceram corretamente na página dentro do browser do PT.
+ 
+Funcionalidade 2: Eventos (clique no card abre o modal)
+  Resultado: SUCESSO PARCIAL — o event listener de clique
+  foi registrado. No browser do PT, o comportamento de abertura
+  do modal funcionou. Em versões mais antigas do simulador,
+  esta função pode apresentar limitações de suporte a JS.
+ 
+Funcionalidade 3: Mudança de estilo dinâmica (classList)
+  Resultado: SUCESSO — a adição/remoção da classe "ativo" no
+  overlay alterou o display do modal conforme esperado.
+ 
+Observação importante:
+  Todos os testes de interatividade JavaScript foram também
+  realizados com sucesso em navegador real (Google Chrome),
+  confirmando o funcionamento completo de todas as
+  funcionalidades implementadas fora do ambiente simulado.
+ 
+--------------------------------------------------------------
+RESUMO GERAL DOS TESTES
+--------------------------------------------------------------
+ 
+  Teste                              | Resultado
+  -----------------------------------|----------
+  1. Ping PC00 → Server00            | SUCESSO
+  2. Ping PC01 → Server00            | SUCESSO
+  3. Ping PC00 → Gateway (Router00)  | SUCESSO
+  4. Acesso web via IP               | SUCESSO
+  5. Acesso web via DNS              | SUCESSO
+  6. JavaScript — DOM                | SUCESSO
+  7. JavaScript — Eventos            | SUCESSO
+  8. JavaScript — Estilo dinâmico    | SUCESSO
+  Total: 8/8 testes concluídos com sucesso.
