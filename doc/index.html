@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabores do Brasil — Receitas Típicas</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <h1>Sabores do Brasil!!</h1>
+      <p class="subtitulo">10 receitas típicas que contam a história da nossa culinária</p>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#receitas">Receitas</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section id="receitas">
+      <h2>Receitas em Destaque</h2>
+
+      <div class="filtros">
+        <button class="btn-filtro ativo" onclick="filtrar('todas')">Todas</button>
+        <button class="btn-filtro" onclick="filtrar('prato')">Pratos</button>
+        <button class="btn-filtro" onclick="filtrar('sobremesa')">Sobremesas</button>
+        <button class="btn-filtro" onclick="filtrar('bebida')">Bebidas</button>
+      </div>
+
+      <div class="grade-receitas" id="grade-receitas">
+
+        <article class="card-receita" data-categoria="prato">
+          <img src="Feijoada_Brazil.jpg" alt="Feijoada" />
+          <div class="card-corpo">
+            <span class="tag">Prato</span>
+            <h3>Feijoada</h3>
+            <p>O prato mais famoso do Brasil! Feijão preto cozido lentamente com carnes defumadas, servido com arroz, couve e farofa.</p>
+            <ul class="ingredientes-mini">
+              <li>Feijão preto</li>
+              <li>Costela de porco</li>
+              <li>Linguiça defumada</li>
+              <li>Carne seca</li>
+            </ul>
+            <button class="btn-ver" onclick="verReceita('Feijoada', 'Cozinhe o feijão preto de véspera. Refogue alho e cebola, adicione as carnes e o feijão. Cozinhe por 2h na pressão. Tempere com sal e pimenta. Sirva com arroz, couve refogada e farofa.')">Ver receita completa</button>
+          </div>
+        </article>
+
+        <article class="card-receita" data-categoria="prato">
+          <img src="Moqueca_baiana.jpg" alt="Moqueca Baiana" />
+          <div class="card-corpo">
+            <span class="tag">Prato</span>
+            <h3>Moqueca Baiana</h3>
+            <p>Peixe fresco cozido no leite de coco com azeite de dendê, tomate, cebola e pimentão. Típica da Bahia.</p>
+            <ul class="ingredientes-mini">
+              <li>Filé de peixe</li>
+              <li>Leite de coco</li>
+              <li>Azeite de dendê</li>
+              <li>Coentro</li>
+            </ul>
+            <button class="btn-ver" onclick="verReceita('Moqueca Baiana', 'Marine o peixe com limão, alho e sal. Refogue cebola, tomate e pimentão. Adicione o peixe, leite de coco e azeite de dendê. Cozinhe por 20 minutos. Finalize com coentro fresco.')">Ver receita completa</button>
+          </div>
+        </article>
+
+        <article class="card-receita" data-categoria="prato">
+          <img src="Frango_com_Quiabo.jpg" alt="Frango com Quiabo" />
+          <div class="card-corpo">
+            <span class="tag">Prato</span>
+            <h3>Frango com Quiabo</h3>
+            <p>Prato mineiro clássico: frango caipira refogado com quiabo em molho dourado. Simplicidade que encanta.</p>
+            <ul class="ingredientes-mini">
+              <li>Frango caipira</li>
+              <li>Quiabo</li>
+              <li>Alho e cebola</li>
+              <li>Óleo e sal</li>
+            </ul>
+            <button class="btn-ver" onclick="verReceita('Frango com Quiabo', 'Doure o frango em pedaços no óleo quente. Adicione alho, cebola e refogue. Coloque o quiabo cortado e cozinhe por 30 minutos. Finalize com salsa. Sirva com angu ou arroz.')">Ver receita completa</button>
+          </div>
+        </article>
+
+        <article class="card-receita" data-categoria="prato">
+          <img src="Baiao_de_dois.jpg" alt="Baião de Dois" />
+          <div class="card-corpo">
+            <span class="tag">Prato</span>
+            <h3>Baião de Dois</h3>
+            <p>Prato nordestino que mistura arroz e feijão de corda com queijo coalho e charque. Sabor único!</p>
+            <ul class="ingredientes-mini">
+              <li>Arroz</li>
+              <li>Feijão de corda</li>
+              <li>Queijo coalho</li>
+              <li>Charque</li>
+            </ul>
+            <button class="btn-ver" onclick="verReceita('Baião de Dois', 'Cozinhe o feijão de corda até ficar macio. Refogue alho, cebola e charque. Adicione o arroz cru e o feijão com o caldo. Cozinhe até secar. Misture o queijo coalho ralado e sirva quente.')">Ver receita completa</button>
+          </div>
+        </article>
+
+        <article class="card-receita" data-categoria="prato">
+          <img src="Tacaca.jpg" alt="Tacaca" />
+          <div class="card-corpo">
+            <span class="tag">Prato</span>
+            <h3>Tacacá</h3>
+            <p>Caldo típico do Pará servido quente em cuia, com tucupi, jambu e camarão seco. Um prato amazônico único.</p>
+            <ul class="ingredientes-mini">
+              <li>Tucupi</li>
+              <li>Goma de tapioca</li>
+              <li>Jambu</li>
+              <li>Camarão seco</li>
+            </ul>
+            <button class="btn-ver" onclick="verReceita('Tacacá', 'Ferva o tucupi por 20 minutos. Dissolva a goma em água e cozinhe até engrossar. Em uma cuia, coloque o tucupi quente, a goma, o jambu cozido e o camarão seco. Sirva imediatamente.')">Ver receita completa</button>
+          </div>
+        </article>
+
+        <article class="card-receita" data-categoria="sobremesa">
+          <img src="Brigadeiro_brasileiro.jpg" alt="Brigadeiro" />
+          <div class="card-corpo">
+            <span class="tag">Sobremesa</span>
+            <h3>Brigadeiro</h3>
+            <p>O doce mais amado do Brasil! Feito com leite condensado, chocolate e manteiga, enrolado no granulado.</p>
+            <ul class="ingredientes-mini">
+              <li>Leite condensado</li>
+              <li>Cacau em pó</li>
+              <li>Manteiga</li>
+              <li>Granulado</li>
+            </ul>
+            <button class="btn-ver" onclick="verReceita('Brigadeiro', 'Misture leite condensado, cacau e manteiga. Cozinhe em fogo médio, mexendo sempre, até soltar do fundo. Espere esfriar. Unte as mãos com manteiga, enrole bolinhas e cubra com granulado.')">Ver receita completa</button>
+          </div>
+        </article>
+
+        <article class="card-receita" data-categoria="sobremesa">
+          <img src="Bolo_de_rolo.jpg" alt="Bolo de Rolo" />
+          <div class="card-corpo">
+            <span class="tag">Sobremesa</span>
+            <h3>Bolo de Rolo</h3>
+            <p>Especialidade pernambucana com camadas finíssimas de massa e goiabada. Uma tradição de mais de 100 anos.</p>
+            <ul class="ingredientes-mini">
+              <li>Farinha de trigo</li>
+              <li>Ovos</li>
+              <li>Goiabada</li>
+              <li>Açúcar</li>
+            </ul>
+            <button class="btn-ver" onclick="verReceita('Bolo de Rolo', 'Bata ovos com açúcar até dobrar de volume. Adicione farinha peneirada. Espalhe em assadeira, asse por 5 minutos. Recheie com goiabada derretida e enrole ainda quente. Repita as camadas 4 a 6 vezes.')">Ver receita completa</button>
+          </div>
+        </article>
+
+        <article class="card-receita" data-categoria="sobremesa">
+          <img src="Canjica.jpg" alt="Canjica" />
+          <div class="card-corpo">
+            <span class="tag">Sobremesa</span>
+            <h3>Canjica</h3>
+            <p>Típica de festa junina! Milho branco cozido no leite com coco, canela e amendoim. Cremosa e reconfortante.</p>
+            <ul class="ingredientes-mini">
+              <li>Milho de canjica</li>
+              <li>Leite condensado</li>
+              <li>Coco ralado</li>
+              <li>Canela</li>
+            </ul>
+            <button class="btn-ver" onclick="verReceita('Canjica', 'Deixe o milho de molho por 12 horas. Cozinhe na pressão por 30 minutos. Adicione leite, leite condensado, coco ralado e cravo. Cozinhe em fogo baixo por 20 minutos. Sirva com canela por cima.')">Ver receita completa</button>
+          </div>
+        </article>
+
+        <article class="card-receita" data-categoria="bebida">
+          <img src="Caipirinhas.jpg" alt="Caipirinha" />
+          <div class="card-corpo">
+            <span class="tag">Bebida</span>
+            <h3>Caipirinha</h3>
+            <p>O coquetel mais famoso do Brasil no mundo! Cachaça, limão, açúcar e gelo. Simples e imbatível.</p>
+            <ul class="ingredientes-mini">
+              <li>Cachaça</li>
+              <li>Limão tahiti</li>
+              <li>Açúcar</li>
+              <li>Gelo</li>
+            </ul>
+            <button class="btn-ver" onclick="verReceita('Caipirinha', 'Corte o limão em pedaços e coloque no copo. Adicione 2 colheres de açúcar e macere bem. Coloque gelo picado e acrescente 50ml de cachaça. Mexa levemente e sirva.')">Ver receita completa</button>
+          </div>
+        </article>
+
+        <article class="card-receita" data-categoria="bebida">
+          <img src="Suco_de_acai.jpg" alt="Suco de Açaí" />
+          <div class="card-corpo">
+            <span class="tag">Bebida</span>
+            <h3>Vitamina de Açaí</h3>
+            <p>Batido com guaraná e leite, o açaí é o superalimento da Amazônia. Rico em energia e nutrientes.</p>
+            <ul class="ingredientes-mini">
+              <li>Polpa de açaí</li>
+              <li>Guaraná natural</li>
+              <li>Banana</li>
+              <li>Mel</li>
+            </ul>
+            <button class="btn-ver" onclick="verReceita('Vitamina de Açaí', 'Bata no liquidificador a polpa de açaí congelada com guaraná natural e banana. Adicione mel a gosto. Se quiser mais grosso, adicione menos líquido. Sirva gelado e imediatamente.')">Ver receita completa</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Modal da receita completa -->
+    <div id="modal-receita" class="modal" style="display:none">
+      <div class="modal-caixa">
+        <button class="fechar-modal" onclick="fecharModal()">✕</button>
+        <h2 id="modal-titulo"></h2>
+        <p id="modal-modo"></p>
+        <button class="btn-favorito" onclick="adicionarFavorito()">Adicionar aos favoritos</button>
+        <p id="msg-favorito" style="display:none" class="msg-sucesso"> Receita salva nos favoritos!</p>
+      </div>
+    </div>
+
+    <!-- Calculadora de porções -->
+    <aside id="sobre">
+      <h2>Calculadora de Porções</h2>
+      <p>Informe o número de convidados e calcularemos as quantidades para a Feijoada!</p>
+      <div class="calculadora">
+        <label for="num-pessoas">Número de pessoas:</label>
+        <input type="number" id="num-pessoas" min="1" max="100" placeholder="Ex: 10" />
+        <button onclick="calcularPorcoes()">Calcular</button>
+        <div id="resultado-porcoes" class="resultado"></div>
+      </div>
+    </aside>
+
+    <!-- Seção de contato com validação de formulário -->
+    <section id="contato">
+      <h2>Envie sua Receita</h2>
+      <p>Tem uma receita típica da sua região? Compartilhe conosco!</p>
+      <form id="form-receita" onsubmit="return false">
+        <div class="grupo-campo">
+          <label for="nome">Seu nome *</label>
+          <input type="text" id="nome" placeholder="Ex: Maria da Silva" />
+        </div>
+        <div class="grupo-campo">
+          <label for="email">E-mail *</label>
+          <input type="email" id="email" placeholder="seuemail@exemplo.com" />
+        </div>
+        <div class="grupo-campo">
+          <label for="nome-receita">Nome da receita *</label>
+          <input type="text" id="nome-receita" placeholder="Ex: Cuscuz Paulista" />
+        </div>
+        <div class="grupo-campo">
+          <label for="descricao">Descrição da receita *</label>
+          <textarea id="descricao" rows="4" placeholder="Descreva os ingredientes e o modo de preparo..."></textarea>
+        </div>
+        <button type="submit" class="btn-enviar" onclick="enviarFormulario()">Enviar receita</button>
+        <p id="msg-form" style="display:none"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Rodapé da página -->
+  <footer>
+    <p>🇧🇷 Sabores do Brasil &mdash; Projeto Integrador | Redes e Front-End</p>
+    <p><a href="#receitas">Voltar ao topo ↑</a></p>
+  </footer>
+
+  <!-- Vinculação do arquivo JavaScript externo -->
+  <script src="script.js"></script>
+
+</body>
+</html>
